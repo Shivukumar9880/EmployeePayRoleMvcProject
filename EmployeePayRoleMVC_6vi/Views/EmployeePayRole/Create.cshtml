@@ -1,0 +1,217 @@
+﻿@model CommonLayer.models.EmployeeModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBkWOH7BfNWA8eII1UdXrxgbe5zL0R5f" crossorigin="anonymous">
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 2000px; /* Set your desired max-width */
+        margin: auto; /* Center the container */
+        
+    }
+
+    h4 {
+        color: #007bff;
+        text-align: center; /* Center the text */
+    }
+    .row{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    .form {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .image-preview {
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    a {
+        color: #007bff;
+    }
+
+        a:hover {
+            color: #0056b3;
+        }
+</style>
+
+
+<div class="container mt-4">
+    <h1>Create</h1>
+    <h4>EmployeeModel</h4>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4" >
+            <form asp-action="Create" class="form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label">Full Name:</label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImagePath" class="control-label">Select Image:</label>
+                    <div class="d-flex align-items-center gap-3" style="display:flex;gap:40px">
+                        <div class="mr-4">
+                            @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img1.jpeg"))
+                            <img class="image-preview" src="~/Assets/img1.jpeg" />
+                        </div>
+                        <div class="mr-4">
+                            @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img2.jpeg"))
+                            <img class="image-preview" src="~/Assets/img2.jpeg" />
+                        </div>
+                        <div class="mr-4">
+                            @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img1.jpeg"))
+                            <img class="image-preview" src="~/Assets/img1.jpeg" />
+                        </div>
+                        <div class="mr-4">
+                            @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img2.jpeg"))
+                            <img class="image-preview" src="~/Assets/img2.jpeg" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="ImagePath" class="text-danger"></span>
+                </div>
+
+                <div class="form-group d-flex align-items-center gap-3">
+                    <label asp-for="Gender" class="control-label">Gender:</label>
+                    <div class="d-flex align-items-center" style="display:flex;gap:40px">
+                        <div class="mr-2">
+                            Male @Html.RadioButtonFor(m => m.Gender, "Male")
+                        </div>
+                        <div>
+                            Female @Html.RadioButtonFor(m => m.Gender, "Female")
+                        </div>
+                    </div>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+
+
+
+
+
+
+                <style>
+                    .btn-group .btn-primary.active {
+                        background-color: transparent;
+                    }
+                </style>
+
+                <div class="form-group" style="display:flex;gap:10px;">
+                    <label asp-for="Department" class="control-label">Department:</label>
+
+                    <div class="btn-group" data-toggle="buttons" style="display:flex;gap:20px;">
+                        <label class="">
+                            <input type="checkbox" asp-for="Department" value="HR" class="form-check-input" onclick="handleCheckboxClick('HR')" />
+                            HR
+                        </label>
+                        <label class="">
+                            <input type="checkbox" asp-for="Department" value="Sales" class="form-check-input" onclick="handleCheckboxClick('Sales')" />
+                            Sales
+                        </label>
+                        <label class="">
+                            <input type="checkbox" asp-for="Department" value="Finance" class="form-check-input" onclick="handleCheckboxClick('Finance')" />
+                            Finance
+                        </label>
+                        <label class="">
+                            <input type="checkbox" asp-for="Department" value="Others" class="form-check-input" onclick="handleCheckboxClick('Others')" />
+                            Others
+                        </label>
+                    </div>
+
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+
+                <script>
+                    function handleCheckboxClick(value) {
+                        // Uncheck all checkboxes
+                        document.querySelectorAll('.btn-group input[type="checkbox"]').forEach(function (checkbox) {
+                            if (checkbox.value !== value) {
+                                checkbox.checked = false;
+                            }
+                        });
+                    }
+                </script>
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group">
+                    <label asp-for="Salary" class="control-label">Salary:</label>
+                    <input asp-for="Salary" class="form-control" />
+                    <span asp-validation-for="Salary" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="StartDate" class="control-label">Start Date:</label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Notes" class="control-label">Notes:</label>
+                    <input asp-for="Notes" class="form-control" />
+                    <span asp-validation-for="Notes" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+
+                <div>
+                    <a asp-action="GetAllEmployee" style="margin-left: 0px; padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border: 1px solid #3498db; border-radius: 4px; transition: background-color 0.3s;">
+                        Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

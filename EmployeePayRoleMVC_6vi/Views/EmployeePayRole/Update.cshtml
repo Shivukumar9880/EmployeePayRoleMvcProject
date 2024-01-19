@@ -1,0 +1,173 @@
+﻿@model RepositoryLayer.Entities.EmployeeEntity
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+
+
+<h4>EmployeeEntity</h4>
+
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Light gray background color */
+        padding: 20px;
+    }
+
+    h1 {
+        color: #007bff; /* Blue header color */
+    }
+
+    h4 {
+        color: #6c757d; /* Dark gray subheading color */
+    }
+
+    h4 {
+        color: #007bff;
+        text-align: center; /* Center the text */
+    }
+
+    .image-preview {
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form {
+        background-color: lightgrey; /* White form background color */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for form */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #495057; /* Dark gray label color */
+    }
+
+    input[type="text"],
+    input[type="hidden"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ced4da; /* Light gray border */
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Blue button color */
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+
+    a {
+        color: #007bff; /* Blue link color */
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+</style>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @* <label asp-for="EmployeeId" class="control-label"></label> *@
+                <input asp-for="EmployeeId" class="form-control" type="hidden" readonly/>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label">Select Image:</label>
+                <div class="d-flex align-items-center gap-3" style="display:flex;gap:40px">
+                    <div class="mr-4">
+                        @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img1.jpeg"))
+                        <img class="image-preview" src="~/Assets/img1.jpeg" />
+                    </div>
+                    <div class="mr-4">
+                        @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img2.jpeg"))
+                        <img class="image-preview" src="~/Assets/img2.jpeg" />
+                    </div>
+                    <div class="mr-4">
+                        @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img1.jpeg"))
+                        <img class="image-preview" src="~/Assets/img1.jpeg" />
+                    </div>
+                    <div class="mr-4">
+                        @Html.RadioButtonFor(model => model.ImagePath, Url.Content("~/Assets/img2.jpeg"))
+                        <img class="image-preview" src="~/Assets/img2.jpeg" />
+                    </div>
+                </div>
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Salary" class="control-label"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <input type="submit" value="Save" class="btn btn-primary" />
+                
+            </div>
+
+            <div>
+                <a asp-action="GetAllEmployee" style="margin-left: 10px; padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border: 1px solid #3498db; border-radius: 4px; transition: background-color 0.3s;">
+                    Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

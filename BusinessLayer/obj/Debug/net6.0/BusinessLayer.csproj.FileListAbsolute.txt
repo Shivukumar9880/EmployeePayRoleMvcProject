@@ -1,0 +1,17 @@
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\BusinessLayer.deps.json
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\CommonLayer.dll
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\CommonLayer.pdb
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CopyComplete
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.dll
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Shivu\source\repos\EmployeePayRoleMVC\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll

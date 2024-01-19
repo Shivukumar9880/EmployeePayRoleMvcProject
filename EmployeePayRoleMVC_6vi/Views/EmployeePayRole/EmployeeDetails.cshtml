@@ -1,0 +1,135 @@
+﻿@model RepositoryLayer.Entities.EmployeeEntity
+
+@{
+    ViewData["Title"] = "EmployeeDetails";
+}
+
+<h1>EmployeeDetails</h1>
+
+
+<style>
+    /* Apply styles to the container */
+    .employee-details-container {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    /* Style for the headings */
+    h1, h4 {
+        color: #3498db;
+    }
+
+    /* Style for the definition list */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    dt {
+        float: left;
+        width: 30%;
+        font-weight: bold;
+        color: #555;
+    }
+
+    dd {
+        float: left;
+        width: 70%;
+        margin-left: 0;
+        color: #333;
+    }
+
+    /* Style for the links */
+    .action-links {
+        margin-top: 20px;
+    }
+
+        .action-links a {
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #3498db;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .action-links a:hover {
+                background-color: #2074a0;
+            }
+
+
+
+</style>
+
+<div>
+    <h4>EmployeeEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+    </dl>
+</div>
+<div style="margin-top: 20px;">
+
+    @Html.ActionLink("Edit", "Update", new { id = Model.EmployeeId }, new { style = "padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border: 1px solid #3498db; border-radius: 4px; transition: background-color 0.3s;" })
+
+    <a asp-action="GetAllEmployee" style="margin-left: 10px; padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border: 1px solid #3498db; border-radius: 4px; transition: background-color 0.3s;">
+        Back to List
+    </a>
+
+</div>
+

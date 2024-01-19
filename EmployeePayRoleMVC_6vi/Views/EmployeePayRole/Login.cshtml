@@ -1,0 +1,94 @@
+﻿@model CommonLayer.models.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Set a light background color */
+    }
+
+    .rowLogin{
+        display:flex;
+        align-items:center;
+       justify-content:center;
+    }
+
+     h4 {
+        color: #007bff; /* Bootstrap primary color */
+        text-align: center; /* Center the text */
+    }
+
+    .form {
+        background-color: #ffffff; /* White background for the form */
+        border-radius: 8px; /* Rounded corners */
+        padding: 20px; /* Padding for the form content */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Space between form groups */
+    }
+
+    input[type="submit"] {
+        background-color: #007bff; /* Button color */
+        color: #ffffff; /* Button text color */
+        border: none;
+        padding: 10px 20px; /* Padding for the button */
+        border-radius: 5px; /* Rounded corners for the button */
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
+
+    a {
+        color: #007bff; /* Link color */
+    }
+
+        a:hover {
+            color: #0056b3; /* Darker color on hover */
+        }
+</style>
+
+<h1>Login</h1>
+
+<h4>LoginModel</h4>
+<hr />
+<div class="rowLogin">
+    <div class="col-md-4">
+        <form asp-action="Login" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <input asp-for="EmployeeId" class="form-control" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top: 10px; margin-bottom: 20px;">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+
+            <div>
+                <a asp-action="GetAllEmployee" style="margin-left: 0px; padding: 10px 15px; background-color: #3498db; color: white; text-decoration: none; border: 1px solid #3498db; border-radius: 4px; transition: background-color 0.3s;">
+                    Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

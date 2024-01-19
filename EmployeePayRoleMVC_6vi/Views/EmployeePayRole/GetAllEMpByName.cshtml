@@ -1,0 +1,51 @@
+﻿@model List<RepositoryLayer.Entities.EmployeeEntity>
+@{
+    ViewData["Title"] = "GetAllEMpByName";
+}
+
+<h1>GetAllEMpByName</h1>
+
+<table class="table" style="background-color:thistle">
+    <thead>
+        <tr style="border:2px solid black; background-color:steelblue">
+            <th>Employee Id</th>
+            <th>Full Name</th>
+            <th>Image Path</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Notes</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.FullName</td>
+                <td>@employee.ImagePath</td>
+                <td>@employee.Gender</td>
+                <td>@employee.Department</td>
+                <td>@employee.Salary</td>
+                <td>@employee.StartDate</td>
+                <td>@employee.Notes</td>
+                <td>
+                    @* @Html.ActionLink(linkText, actionName, controllerName, routeValues, htmlAttributes) *@
+
+                    @Html.ActionLink("Edit", "Update", new { id = employee.EmployeeId }, new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4CAF50; color: white;" }) |
+                    @Html.ActionLink("Details", "EmployeeDetails", new { id = employee.EmployeeId }, new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4285f4; color: white;" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId }, new { @class = "btn btn-danger", style = "margin-right: 5px; background-color: #dc3545; color: white;" })
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EmployeePayRoleMVC_6vi.props" />
+</Project>

@@ -1,0 +1,136 @@
+﻿@model List<RepositoryLayer.Entities.EmployeeEntity>
+
+@{
+    ViewData["Title"] = "GetAllEmplo yees";
+}
+
+<style>
+    /* Apply styles to the container */
+    .container {
+        margin: 20px;
+    }
+
+    /* Style for the action links */
+    .action-links span {
+        border: 2px solid black;
+        background-color: aquamarine;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .action-links span:hover {
+            background-color: darkcyan;
+        }
+
+    /* Style for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: steelblue;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: thistle;
+    }
+
+    /* Style for the action links in the table */
+    .action-links-table a {
+        text-decoration: none;
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: 1px solid #3498db;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #3498db;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .action-links-table a:hover {
+            background-color: #2074a0;
+        }
+</style>
+
+@* 
+
+@Html.ActionLink("Create New", "Create", new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4CAF50; color: white;" })
+@Html.ActionLink("Login", "Login", null, new { @class = "btn btn-secondary", style = "margin-right: 10px; color: white; text-decoration: none; background-color: #6c757d; border-color: #6c757d; transition: background-color 0.3s ease;" })
+
+ *@
+
+
+<button style="padding: 8px 12px; margin: 2px; background-color: #4CAF50; color: white; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 4px;">
+    @Html.ActionLink("Create", "Create", new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4CAF50; color: white;" })
+</button>
+
+<button style="padding: 8px 12px; margin: 2px; background-color: #DC3545; color: ghostwhite; border: none; text-align: center; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 4px;">
+    @Html.ActionLink("Login", "Login", new { style = "color: white; text-decoration: none;" })
+</button>
+
+
+
+
+
+
+
+
+
+<h1 style="Color :skyblue">GetAllEmployees</h1>
+
+<table class="table" style="background-color:thistle">
+    <thead>
+        <tr style="border:2px solid black; background-color:steelblue">
+            <th>Employee Id</th>
+            <th>Full Name</th>
+            <th>Image Path</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Notes</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.FullName</td>
+                <td>@employee.ImagePath</td>
+                <td>@employee.Gender</td>
+                <td>@employee.Department</td>
+                <td>@employee.Salary</td>
+                <td>@employee.StartDate</td>
+                <td>@employee.Notes</td>
+                <td>
+                    @* @Html.ActionLink(linkText, actionName, controllerName, routeValues, htmlAttributes) *@
+
+                    @Html.ActionLink("Edit", "Update", new { id = employee.EmployeeId }, new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4CAF50; color: white;" }) |
+                    @Html.ActionLink("Details", "EmployeeDetails", new { id = employee.EmployeeId }, new { @class = "btn btn-secondary", style = "margin-right: 5px; background-color: #4285f4; color: white;" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId }, new { @class = "btn btn-danger", style = "margin-right: 5px; background-color: #dc3545; color: white;" })
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

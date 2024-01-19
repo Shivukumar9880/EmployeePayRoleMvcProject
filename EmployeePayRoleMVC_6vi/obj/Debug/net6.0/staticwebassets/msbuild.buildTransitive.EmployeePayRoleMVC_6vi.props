@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EmployeePayRoleMVC_6vi.props" />
+</Project>
